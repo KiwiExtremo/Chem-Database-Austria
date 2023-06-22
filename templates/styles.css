@@ -1,0 +1,134 @@
+.title-text {
+    font-family: 'Kanit';
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin-top: 50px;
+}
+
+section {
+    margin-top: 50px !important;
+    margin-bottom:50px !important;
+    padding-bottom: 10px;
+    
+}
+
+h4 {
+    padding-top: 20px;
+    color:rgb(5, 53, 38);
+}
+
+h5 {
+    font-weight: bold;
+    color:rgb(5, 53, 38);
+    margin: 0 0 0.656rem 0;
+}
+
+h6 {
+    color:rgb(5, 53, 38);
+    margin-bottom: 0.8rem;
+}
+
+.warning-message {
+    color:rgb(79, 66, 17);
+}
+
+.btn {
+    margin: 0 10px;
+}
+
+form {
+    max-width: 460px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+label {
+    font-size: 1em;
+    color: rgb(13, 44, 34);
+}
+
+.top-li {
+    margin-top: 20px;
+}
+
+input + div {
+    padding: 5px;
+}
+
+.warning > div {
+    display: flex;
+    align-items: center;
+    margin: 0px auto;
+}
+
+.warning > div > p {
+    margin-left: 10px;
+}
+
+.tabs .indicator {
+    background-color: teal;
+}
+
+.tabs .tab a {
+    color: rgb(5, 53, 38);
+}
+
+.tabs {
+    background-color: inherit;
+}
+
+.tabs .tab a:focus, .tabs .tab a.active, .tabs .tab a:hover {
+    background: transparent;
+    color: rgb(5, 53, 38);
+    font-weight: bold;
+}
+
+.tabs .tab a:focus.active {
+    background:rgba(0, 128, 128, 0.11);
+}
+
+.table-wrapper {
+    max-height: 530px;
+    overflow: auto;
+    margin-bottom: 50px;
+}
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    background-color: #b2dfdb;
+    z-index: 2;
+}
+
+.sticky-column {
+    position: sticky;
+    left: 0;
+    background-color: #e0f2f1;
+    z-index: 1;
+}
+
+.sticky-column-header {
+    position: sticky;
+    left: 0;
+    top: 0;
+    background-color: #b2dfdb;
+    z-index: 1;
+}
+
+.image {
+    width: 50px;
+}
+
+.form_img {
+    width: 35px;
+    vertical-align: middle;
+}
+
+.centered-text {
+    text-align: center;
+}
