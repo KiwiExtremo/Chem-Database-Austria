@@ -10,4 +10,4 @@ I handled all the webpage UI and backend, and connected it to the database to ma
 
 The project has been coded to be used on a localhost (using XAMPP), so changes should be done to the db_conn.php file if anyone wants to use a different server. The database has been cleaned and filled with dummy entries, to keep all sensitive information protected.
 
-There is a user manual that explains how to import the database, how the webpage works, and a brief descrption of the Android app (it is not posted on this repo).
+There is a user manual that explains how to import the database, how the webpage works, and a brief description of the Android app (it is not posted on this repo).
