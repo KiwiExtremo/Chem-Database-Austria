@@ -9,6 +9,7 @@
             $('.sidenav').sidenav();
             $('select').formSelect();
             $('.collapsible').collapsible();
+            $('.tabs').tabs();
         });
     </script>
 </body>

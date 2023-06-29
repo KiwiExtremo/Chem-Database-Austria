@@ -17,6 +17,12 @@ section {
     
 }
 
+.img-responsive {
+    max-height: 60px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
 h4 {
     padding-top: 20px;
     color:rgb(5, 53, 38);
@@ -58,6 +64,14 @@ label {
 
 input + div {
     padding: 5px;
+}
+
+.warning:last-of-type {
+    margin-bottom: 50px;
+}
+
+.warning:only-of-type {
+    margin-bottom: 50px;
 }
 
 .warning > div {
@@ -131,4 +145,24 @@ input + div {
 
 .centered-text {
     text-align: center;
+}
+
+th, td {
+    padding: 0px 10px;
+}
+
+.red-bg {
+    background-color: #ffcdd2;
+}
+
+.yellow-bg {
+    background-color: #fff59d;
+}
+
+.green-bg {
+    background-color: #ccff90;
+}
+
+.blue-bg {
+    background-color: #b3e5fc;
 }

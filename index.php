@@ -1,4 +1,7 @@
 <?php
+    // include functions
+    include_once("functions.php");
+    
     // connect to the database
     include("templates/db_conn.php");
 
@@ -7,9 +10,9 @@
                 FLAME, FLAME_OVER_CIRCLE, CORROSION, GAS_CYLINDER, SKULL_AND_CROSSBONES, EXCLAMATION_MARK, HEALTH_HAZARD, ENVIRONMENT, s.LINK AS 'SDB - LINK'
                 FROM chemicals c JOIN manufacturer m 
                 ON c.MANUFACTURER_ID = m.MANUFACTURER_ID 
-                JOIN id_equivalent i 
+                JOIN internal_ids i 
                 ON c.ID_NEW = i.ID_NEW
-                JOIN sds s
+                JOIN sdb s
                 ON c.ID_NEW = s.CHEMICAL_ID
                 JOIN storage st
                 ON c.STORAGE_ID = st.STORAGE_ID
@@ -87,8 +90,30 @@
                                 // make the first column sticky
                                 if ($columna === 'STOFFNAME') {
                                     echo "<td class='sticky-column'>$value</td>";
-                                } else if (in_array($columna, ['FLAME', 'FLAME_OVER_CIRCLE', 'CORROSION', 'GAS_CYLINDER', 'SKULL_AND_CROSSBONES', 'EXCLAMATION_MARK', 'HEALTH_HAZARD', 'ENVIRONMENT'])) {
-                                    echo "<td class='centered-text'>$value</td>";
+                                } else if(in_array($columna, ['FLAME', 'FLAME_OVER_CIRCLE', 'CORROSION', 'GAS_CYLINDER', 'SKULL_AND_CROSSBONES', 'EXCLAMATION_MARK', 'HEALTH_HAZARD', 'ENVIRONMENT'])) {
+                                    
+                                    // Apply different background color classes based on the cell value
+                                    $bgClass = '';
+                                    switch ($value) {
+                                        case 'nicht':
+                                            $bgClass = 'red-bg';
+                                            break;
+                                        case 'ach':
+                                            $bgClass = 'yellow-bg';
+                                            break;
+                                        case 'gef':
+                                            $bgClass = 'green-bg';
+                                            break;
+                                        case 'entfällt':
+                                            $bgClass = 'blue-bg';
+                                            break;
+                                        default:
+                                            $bgClass = '';
+                                            break;
+                                    }
+
+                                    // Add the CSS class to the cell
+                                    echo "<td class='centered-text table-cell $bgClass'>$value</td>";
                                 } else {
                                 echo "<td>$value</td>";
                                 }

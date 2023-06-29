@@ -1,4 +1,5 @@
 <?php
+    session_start();
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
 ?>
@@ -18,6 +19,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap">
     <link rel="stylesheet" href="templates/styles.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 
     <title>Chemical Webpage</title>
 
@@ -39,10 +43,24 @@
             </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="queries.php" class="flow-text waves-effect waves-dark">Make a query</a></li>
-                <li><a href="queries2.php" class="flow-text waves-effect waves-dark">Make a query 2</a></li>
                 <li><a href="add.php" class="flow-text waves-effect waves-dark">Add chemical</a></li>
                 <li><a href="delete.php" class="flow-text waves-effect waves-dark">Delete chemical</a></li>
-                <li><a href="login.php" class="flow-text waves-effect waves-dark">Log in</a><li>
+                <?php
+                    // Check if user is logged in
+                    if (isset($_SESSION["username"])) {
+
+                        // User is logged in, display "Log out" button
+                        ?>
+                            <li><a href="logout.php" class="flow-text waves-effect waves-dark">Log out</a></li>
+                        <?php
+                    } else {
+
+                        // User is not logged in, display "Login / Register" button
+                        ?>
+                            <li><a href="login.php" class="flow-text waves-effect waves-dark">Login / Register</a></li>
+                        <?php
+                    }
+                ?>
             </ul>
         </div>
     </nav>
@@ -52,6 +70,14 @@
         <li><a href="queries.php" class="waves-effect mt-2 top-li flow-text center waves-dark white-text">Make a query</a></li>
         <li><a href="add.php" class="waves-effect center flow-text waves-dark white-text">Add chemical</a></li>
         <li><a href="delete.php" class="waves-effect center flow-text waves-dark white-text">Delete chemical</a></li>
-        <li><a href="login.php" class="waves-effect center flow-text waves-dark white-text">Log in</a></li>
+        <?php
+            // Check if user is logged in
+            if (isset($_SESSION["username"])) {
+                // User is logged in, display "Log out" button
+                echo '<li><a href="logout.php" class="flow-text waves-effect waves-dark">Log out</a></li>';
+            } else {
+                // User is not logged in, display "Log in/Register" button
+                echo '<li><a href="login.php" class="flow-text waves-effect waves-dark">Log in / Register</a></li>';
+            }
+        ?>
     </ul>
-    
