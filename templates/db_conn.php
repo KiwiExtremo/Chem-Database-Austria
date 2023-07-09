@@ -3,7 +3,7 @@
     $dbhost = "localhost";
     $dbuser = "root";
     $dbpass = "";
-    $dbname = "Chemicals";
+    $dbname = "chem_stoff";
 
     $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 
